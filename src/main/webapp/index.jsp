@@ -69,7 +69,7 @@ h4{
       <div class="form-style">
       
       
-        <form action ="LoginController" method="post" >
+        <form action ="StaffServlet" method="post" >
           <div class="form-group pb-3">
             <label for="exampleInputstaffid"><b>Staff ID</b></label>
             
@@ -81,7 +81,8 @@ h4{
           </div>
          
           <div class="pb-2">
-            <button type= "submit" value="Submit" width="200px;"></button>
+            <input type="hidden" name="action" value="login">
+            <button type="signin" class="signIn" name="submit">SIGN IN</button>
           </div>
         </form>
     
