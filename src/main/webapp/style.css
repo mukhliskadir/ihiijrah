@@ -1,0 +1,135 @@
+@charset "ISO-8859-1";
+
+body{
+	padding:0; 
+	margin:0;
+}
+
+.container{
+	 	height: 500px;
+        background-color: black;/* For browsers that do not support gradients */
+ 
+}
+a.btn1,a.btn2,a.btn3,a.btn4,a.btn5,a.btn6,a.btn7,a.btn8{
+	height:50px;
+	text-align: center;
+}
+
+
+
+a:link{
+  background-color: #353c49;
+  color: white;
+  padding: 40px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size:11px;
+}
+
+a:hover, a:active {
+  background-color: grey;
+}
+
+a{
+	color:white;
+}
+
+.logo{
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width:70%;
+  	border-radius: 150px;
+}
+
+.user{
+	float:right;
+	display: block;
+  	width:6%;
+  	border-radius: 150px;
+}
+
+form
+{
+  border: 1px solid black;
+  border-radius:25px;
+  padding:20px;
+  vertical-align:center;
+  background-color: lightgrey;
+  margin-bottom: 50px;
+}
+
+input[type=date],input[type=text] select, textarea {
+  width: 80%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=text]{
+  width: 80%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #008040;
+  color:  white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=reset] {
+  background-color: #008040;
+  color:  white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+input[type=reset]:hover {
+  background-color: #45a049;
+}
+.container {
+  border-radius: 5px;
+  margin-left:25px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+  }
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
