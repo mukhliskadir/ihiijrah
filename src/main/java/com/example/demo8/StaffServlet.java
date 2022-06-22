@@ -1,4 +1,4 @@
-package com.example.mosque;
+package com.example.demo8;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -42,14 +42,15 @@ public class StaffServlet extends HttpServlet {
     private void login(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
         PrintWriter out = response.getWriter();
-        HttpSession session = request.getSession();
+
+
 
         String username = request.getParameter("username");
         String password = request.getParameter("pass");
 
         try {
 
-            Class.forName("org.postgresql.Driver"); // ni stay
+            Class.forName("org.postgresql.Driver");
             String dbURL = "jdbc:postgresql://ec2-176-34-215-248.eu-west-1.compute.amazonaws.com/delu1t92658u0";
             String user = "zaiaryvqbpwwcb";
             String pass = "731fafeb016f84ea7f87300cbd19a24ba3e96adbaaf92504bc8d945d0302489b";
@@ -59,6 +60,11 @@ public class StaffServlet extends HttpServlet {
 
             if (con != null){
 
+                DatabaseMetaData dm = con.getMetaData();
+                System.out.println("Driver name: " + dm.getDriverName());
+                System.out.println("Driver version: " + dm.getDriverVersion());
+                System.out.println("Product Name: " + dm.getDatabaseProductName());
+                System.out.println("Product version: " + dm.getDatabaseProductVersion());
 
                 Statement statement = con.createStatement();
                 ResultSet res = statement.executeQuery(sql);
@@ -66,6 +72,7 @@ public class StaffServlet extends HttpServlet {
                 while (res.next()){
                     if(username.equals(res.getString("staff_id")) && password.equals(res.getString("staff_password")))
                     {
+
                         response.sendRedirect("dashboardstaff.jsp");
                     }else{
                     }
