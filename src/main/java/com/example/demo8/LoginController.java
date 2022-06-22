@@ -10,17 +10,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.example.demo8.LoginDAO;
 
 /**
  * Servlet implementation class LoginController
  */
 @WebServlet("/LoginController")
 public class LoginController extends HttpServlet {private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
+    private LoginDAO ld;
+    public void init() {
+        ld = new LoginDAO();
+    }
     public LoginController() {
         super();
         // TODO Auto-generated constructor stub
@@ -35,7 +35,7 @@ public class LoginController extends HttpServlet {private static final long seri
         String n =request.getParameter("username");  
         String p =request.getParameter("userpass");
 
-        if(LoginDAO.validate(n, p)){  
+        if(ld.validate(n, p)){
             RequestDispatcher rd=request.getRequestDispatcher("dashboardstaff.jsp");  
             rd.forward(request,response);  
         }  
