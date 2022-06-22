@@ -33,10 +33,8 @@ public class LoginController extends HttpServlet {private static final long seri
         PrintWriter out = response.getWriter();  
               
         String n =request.getParameter("username");  
-        String p =request.getParameter("userpass");  
-        
-        
-        
+        String p =request.getParameter("userpass");
+
         if(LoginDAO.validate(n, p)){  
             RequestDispatcher rd=request.getRequestDispatcher("dashboardstaff.jsp");  
             rd.forward(request,response);  
